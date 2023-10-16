@@ -1,0 +1,41 @@
+# Docker compose to up the app in local (simulating production)
+# In the host machine you can configure your custom docker-compose
+version: '3'
+
+services:
+  backend:
+    container_name: device-firmware-container
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+       - PORT=8080
+       - GIN_MODE=debug
+    restart: "unless-stopped"
+    ports:
+      - "8080:8080"
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    container_name: postgres_container
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=test
+      - POSTGRES_DB=deviceFirmwares
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -t 0"]
+      interval: 10s
+      timeout: 4s
+      retries: 10
+      start_period: 10s
+
+networks:
+  default:
+    name: device-firmware-container

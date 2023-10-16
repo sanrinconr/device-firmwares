@@ -1,0 +1,910 @@
+{
+	"info": {
+		"_postman_id": "9c3c5ec0-d7bb-4a2f-9506-f754da27a9e1",
+		"name": "dcnearshore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12569393"
+	},
+	"item": [
+		{
+			"name": "device",
+			"item": [
+				{
+					"name": "obtain by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/devices/c2161920-f3d4-43cb-bb7d-97fae48037d8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"c2161920-f3d4-43cb-bb7d-97fae48037d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices/d273b8b8-7b4a-4ff6-88d3-418a5861af0b",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"d273b8b8-7b4a-4ff6-88d3-418a5861af0b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:15:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d273b8b8-7b4a-4ff6-88d3-418a5861af0b\",\n    \"name\": \"samsung\",\n    \"firmware_ids\": [\n        \"d544c87d-aa8f-4cd3-9b31-c7a240cf6f3d\",\n        \"4f5efecd-0125-4e7a-b70b-bc8deccde35e\"\n    ],\n    \"created_at\": \"2023-10-16T01:15:42.527283-05:00\",\n    \"updated_at\": \"2023-10-16T01:15:42.527283-05:00\"\n}"
+						},
+						{
+							"name": "not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices/d273b8b8-7b4a-4ff6-88d3-418a5861af03",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"d273b8b8-7b4a-4ff6-88d3-418a5861af03"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:24:29 GMT"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "obtain all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/devices",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:24:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"121f4859-64f3-4f40-8c78-e5ed99e0efb0\",\n        \"name\": \"samsung\",\n        \"firmware_ids\": [\n            \"d05c359d-4173-46b9-b185-869eabf79414\",\n            \"a25bc25a-c3f3-49a3-bbcd-5930c8ed9059\"\n        ],\n        \"created_at\": \"2023-10-16T01:24:50.089698-05:00\",\n        \"updated_at\": \"2023-10-16T01:24:50.089698-05:00\"\n    }\n]"
+						},
+						{
+							"name": "not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:25:53 GMT"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"updated!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices/dfb623cd-eecf-464b-83d7-628f793a70a5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"dfb623cd-eecf-464b-83d7-628f793a70a5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success but not exists",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"updated!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/f4bc9bdc-2bf7-4527-9544-e99b587f3dd1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"f4bc9bdc-2bf7-4527-9544-e99b587f3dd1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:26:07 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"updated!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/dfb623cd-eecf-464b-83d7-628f793a70a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"dfb623cd-eecf-464b-83d7-628f793a70a5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:26:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"testingEo\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware 1111\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        },\n        {\n            \"name\": \"some firmware 222\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"testingEo\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware 1111\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        },\n        {\n            \"name\": \"some firmware 222\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 07:28:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"created\": \"26eb9353-bfa2-4cae-8cb8-17df3c0255fa\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"blopsito\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/devices/121f4859-64f3-4f40-8c78-e5ed99e0efb0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"121f4859-64f3-4f40-8c78-e5ed99e0efb0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"blopsito\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/121f4859-64f3-4f40-8c78-e5ed99e0efb0",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"121f4859-64f3-4f40-8c78-e5ed99e0efb0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:25:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "success, no one is deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"blopsito\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/devices/121f4859-64f3-4f40-8c78-e5ed99e0efb0",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"devices",
+										"121f4859-64f3-4f40-8c78-e5ed99e0efb0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:25:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "firmware",
+			"item": [
+				{
+					"name": "obtain by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/firmwares/4746328b-11b8-4f51-96b9-d6e14e6e1f5c",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"firmwares",
+								"4746328b-11b8-4f51-96b9-d6e14e6e1f5c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/firmwares/570129bf-37b7-4c79-946f-5eb4530de702",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares",
+										"570129bf-37b7-4c79-946f-5eb4530de702"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:27:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "332"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"570129bf-37b7-4c79-946f-5eb4530de702\",\n    \"device_id\": \"dfb623cd-eecf-464b-83d7-628f793a70a5\",\n    \"name\": \"some firmware 1111\",\n    \"version\": \"1.1.1\",\n    \"release_notes\": \"blop\",\n    \"release_date\": \"2023-10-09T19:00:00-05:00\",\n    \"url\": \"https://testing.com\",\n    \"created_at\": \"2023-10-16T01:26:25.363553-05:00\",\n    \"updated_at\": \"2023-10-16T01:26:25.363553-05:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "obtain all Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/firmwares",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"firmwares"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/firmwares",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:27:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "666"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"570129bf-37b7-4c79-946f-5eb4530de702\",\n        \"device_id\": \"dfb623cd-eecf-464b-83d7-628f793a70a5\",\n        \"name\": \"some firmware 1111\",\n        \"version\": \"1.1.1\",\n        \"release_notes\": \"blop\",\n        \"release_date\": \"2023-10-09T19:00:00-05:00\",\n        \"url\": \"https://testing.com\",\n        \"created_at\": \"2023-10-16T01:26:25.363553-05:00\",\n        \"updated_at\": \"2023-10-16T01:26:25.363553-05:00\"\n    },\n    {\n        \"id\": \"f66f76c0-8f18-4072-969b-d67a642366de\",\n        \"device_id\": \"dfb623cd-eecf-464b-83d7-628f793a70a5\",\n        \"name\": \"some firmware 222\",\n        \"version\": \"1.1.1\",\n        \"release_notes\": \"blop\",\n        \"release_date\": \"2023-10-09T19:00:00-05:00\",\n        \"url\": \"https://testing.com\",\n        \"created_at\": \"2023-10-16T01:26:25.363553-05:00\",\n        \"updated_at\": \"2023-10-16T01:26:25.363553-05:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\":\"2f867c10-739b-4c8a-aa77-d34ab23027d1\",\n    \"name\": \"changed owner\",\n    \"version\":\"1.1.1\",\n    \"release_notes\":\"ueeee\",\n    \"release_date\":\"2023-10-10T10:10:10Z\",\n    \"url\":\"http://some.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/firmwares/c1a6d33e-3df4-4a9a-ba4a-05127a369eff",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"firmwares",
+								"c1a6d33e-3df4-4a9a-ba4a-05127a369eff"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success but not exists",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"device_id\":\"20d59884-50cd-4e5d-842f-45154a87694f\",\n    \"name\": \"blopsitotests\",\n    \"version\":\"1.1.1\",\n    \"release_notes\":\"ueeee\",\n    \"release_date\":\"2023-10-10T10:10:10Z\",\n    \"url\":\"http://some.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/firmwares/13a8f24d-4c54-43f8-8bff-6f683538da75",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares",
+										"13a8f24d-4c54-43f8-8bff-6f683538da75"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:35:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"device_id\":\"2f867c10-739b-4c8a-aa77-d34ab23027d1\",\n    \"name\": \"changed owner\",\n    \"version\":\"1.1.1\",\n    \"release_notes\":\"ueeee\",\n    \"release_date\":\"2023-10-10T10:10:10Z\",\n    \"url\":\"http://some.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/firmwares/c1a6d33e-3df4-4a9a-ba4a-05127a369eff",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares",
+										"c1a6d33e-3df4-4a9a-ba4a-05127a369eff"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:45:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"9d72b0e9-bb6a-4fa0-b768-db2a61c72084\",\n    \"name\": \"some firmware\",\n    \"version\": \"1.1.1\",\n    \"release_notes\": \"blop\",\n    \"release_date\": \"2023-10-10T00:00:00Z\",\n    \"url\": \"https://testing.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/firmwares",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"firmwares"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"device_id\": \"9d72b0e9-bb6a-4fa0-b768-db2a61c72084\",\n    \"name\": \"some firmware\",\n    \"version\": \"1.1.1\",\n    \"release_notes\": \"blop\",\n    \"release_date\": \"2023-10-10T00:00:00Z\",\n    \"url\": \"https://testing.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/firmwares",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:40:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"created\": \"c2161920-f3d4-43cb-bb7d-97fae48037d8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"blopsito\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/firmwares/4746328b-11b8-4f51-96b9-d6e14e6e1f5c",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"firmwares",
+								"4746328b-11b8-4f51-96b9-d6e14e6e1f5c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success, no one is deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"blopsito\",\n    \"firmware\": [\n        {\n            \"name\": \"some firmware\",\n            \"version\": \"1.1.1\",\n            \"release_notes\": \"blop\",\n            \"release_date\": \"2023-10-10T00:00:00Z\",\n            \"url\": \"https://testing.com\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/firmwares/5766fbf7-aeae-4437-bc06-b3f3bb13b7ad",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"firmwares",
+										"5766fbf7-aeae-4437-bc06-b3f3bb13b7ad"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Oct 2023 06:35:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "securePassword",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "testUser",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
